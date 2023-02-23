@@ -1,7 +1,7 @@
 rule OneNote_EmbeddedFiles_NoPictures
 {
     meta:
-        author = "Nicholas Dhaeyer - nicholas.dhaeyer@nviso.eu"
+        author = "Nicholas Dhaeyer - @DhaeyerWolf"
         date_created = "2023-02-14 - <3"
         date_last_modified = "2023-02-17"
         description = "OneNote files that contain embedded files that are not pictures."
