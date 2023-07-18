@@ -8,7 +8,7 @@ rule OneNote_EmbeddedFiles_NoPictures
         reference = "https://blog.didierstevens.com/2023/01/22/analyzing-malicious-onenote-documents/"
 		yarahub_uuid = "d0c4f0e6-adbe-4953-a2df-91427a561e97"
 		date = "2023-02-14"
-		yarahub_license = "CC0 1.0"
+		yarahub_license = "CC BY-SA 4.0"
 		yarahub_rule_matching_tlp = "TLP:WHITE"
 		yarahub_rule_sharing_tlp = "TLP:WHITE"
 		yarahub_reference_md5 = "52486a446dd4fc5842a47b57d3febec7"
