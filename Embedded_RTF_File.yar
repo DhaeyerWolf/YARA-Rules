@@ -33,7 +33,7 @@ rule Embedded_RTF_File
 		$str13 = "<?mso-application progid=\"Excel.Sheet\"?>" //Excel_xml
 		
     condition:
-        1 of ($header*)
+        ($header at 0 or $header1 at 0)
 		and (#rtf > 1)
 		and 1 of ($str*)
 }
