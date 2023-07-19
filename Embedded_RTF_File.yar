@@ -13,10 +13,27 @@ rule Embedded_RTF_File
 		yarahub_reference_md5 = "b6ad6198e155921dc11c855c03d8c264"
 
     strings:
-		$start = { 50 4B 03 04 } //beginning of a archive file
+		$header = { 50 4B 03 04 } //beginning of a archive file
+		$header1 = { D0 CF 11 E0 A1 B1 1A E1 } //Older formats of office files
 	
         $rtf =  { 2E 72 74 66 } //.rtf
-
+		
+		$str1 = "Microsoft Office Word" //doc
+		$str2 = "MSWordDoc" //doc
+		$str3 = "Word.Document.8" //doc
+		$str4 = "Microsoft Office PowerPoint" //ppt
+		$str5 = "Microsoft Excel" //xls
+		$str6 = "Excel.Sheet.8" //xls
+		$str7 = "document.xml" //docx
+		$str8 = "presentation.xml" //pptx
+		$str9 = "workbook.xml" //xlsx
+		$str10 = "workbook.bin" //xlsb
+		$str11 = "<?mso-application progid=\"Word.Document\"?>" //word_xml
+		$str12 = "<?mso-application progid=\"PowerPoint.Show\"?>" //ppt_xml
+		$str13 = "<?mso-application progid=\"Excel.Sheet\"?>" //Excel_xml
+		
     condition:
-        $start at 0 and (#rtf > 1) // make sure that the ".rtf" string is observed more than once to avoid false positives.
+        1 of ($header*)
+		and (#rtf > 1)
+		and 1 of ($str*)
 }
